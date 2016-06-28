@@ -1,0 +1,129 @@
+// @file Global Styles
+
+//
+// Root Elements
+//
+html {
+	font-size: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+	background-color: $bg-color;
+	height: 100%;
+}
+
+//
+// Media Elements
+//
+img,
+video,
+object {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+//
+// Reset lists when used as navigational elements
+//
+nav > ul, 
+nav > ol, 
+ul.menu, 
+ol.menu {
+    @include list-reset();
+    
+    // More often than not, we want anchors in menus to display block
+    a { display: block; }
+}
+
+
+//
+// Semantic Tooltips
+//
+$tooltip-color: palette(brand, orange);
+
+[data-tooltip] {
+	position: relative;
+
+	&:hover,
+	&:focus {
+
+		&:after,
+		&:before {
+			@include transform( translate(-50%, 0) );
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&:after,
+	&:before {
+		@include transition-property( opacity transform );
+		@include transition-duration( 500ms );
+		@include transition-timing-function( ease );
+		@include transition-delay( 250ms );
+		@include transform( translate(-50%, 12px) );
+		@include transform-origin( top );
+		opacity: 0;
+		pointer-events: none;
+		position: absolute;
+			left: 50%;
+		visibility: hidden;
+	}
+
+	&:after {
+		background-color: $tooltip-color;
+		border-radius: $default-border-radius;
+		box-shadow: 0 .125em .25em rgba(#000, .25);
+		color: palette(mono, 75);
+		content: attr(data-tooltip);
+		font-size: .5em;
+		line-height: 1;
+		padding: .5em .75em;
+		white-space: nowrap;
+	}
+
+	&:before {
+		border-color: transparent;
+		border-style: solid;
+		border-width: .25em;
+		content: '';
+		height: 0;
+		width: 0;
+	}
+}
+
+.tooltip {
+
+	&--bottom:after {
+		top: 100%;
+	}
+
+	&--top:after {
+		
+	}
+
+	&--bottom:before {
+		border-bottom-color: $tooltip-color;
+		top: 100%; left: 50%;
+		margin-top: -.5em;
+	}
+
+	&--top:before {
+		border-top-color: $tooltip-color;
+	}
+}
+
+
+// Development only
+#size {
+	background-color: palette(brand);
+	color: palette(mono, white);
+	line-height: 1;
+	padding: .25em;
+	position: fixed;
+		bottom: 10%; right: 0;
+	z-index: 999;
+}

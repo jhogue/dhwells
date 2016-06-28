@@ -1,0 +1,132 @@
+// @file mixins.scss
+
+// @link http://csswizardry.com/2016/02/mixins-better-for-performance/
+
+// Provide a hover effect for non-touch devices, turn it into an Active state for mobile, and maintain a fallback.
+// @requires Modernizr as a JS dependency to get .no-touch classes
+// Adds styles via @content
+// @jhogue
+//
+@mixin touch-hover( $disabled: false ) {
+	$modernizr-hook-off: 'no-touch';
+	$modernizr-hook-on: 'touch';
+
+	@if $disabled {
+		.no-js &,
+		.no-js &:hover, // the fallback
+		.no-js &:focus,
+		.js.#{$modernizr-hook-off} &,
+		.js.#{$modernizr-hook-off} &:hover, // enhanced for no-touch
+		.js.#{$modernizr-hook-off} &:focus,
+		.js.#{$modernizr-hook-on} &,
+		.js.#{$modernizr-hook-on} &:active { // relay same styles to active for touch devices
+			@content;
+		}
+	} @else {
+		.no-js &:hover, // the fallback
+		.no-js &:focus,
+		.js.#{$modernizr-hook-off} &:hover, // enhanced for no-touch
+		.js.#{$modernizr-hook-off} &:focus,
+		.js.#{$modernizr-hook-on} &:active { // relay same styles to active for touch devices
+			@content;
+		}
+  }
+}
+
+// Column Grid
+// Simple mixin to display the grid - options are either 2, 3, or 4
+// @param number of columns
+// @usage column-grid(2)
+// @johncionci
+@mixin column-grid( $columns: null ) {
+	@if $columns == 3 {
+		@include span-columns(4);
+	} @else if $columns == 4 {
+		@include span-columns(3);
+	} @else {
+		@include span-columns(6);
+	}
+}
+
+// List Reset
+// Remove the margin, padding, and bullets from lists
+// @johncionci
+//
+@mixin list-reset() {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+// Mixins for accessible show/hide
+// @jhogue
+@mixin hide() {
+    display: none;
+    visibility: hidden;
+}
+
+@mixin show( $display: block ) {
+    display: $display;
+    visibility: visible;
+}
+
+// Control the output of rem() when font size is involved
+// Gulp used to do this for us, but Brunch does not
+// Requires: px(), a function of ours, and rem(), a function of Bourbon
+// @jhogue
+@mixin rem-fontsize($value) {
+	font-size: px($value);
+	font-size: rem($value);
+}
+
+
+// Bring back a border-radius mixin, if only so we can define a default
+// They have not deprecated their individual mixins, i.e. border-radius-top(), etc…
+// @jhogue
+@mixin border-radius($radius: $default-border-radius) {
+	border-radius: $radius;
+}
+
+
+//
+// Maintain ratio mixin. Great for responsive grids, or videos.
+// "Crops" the element to the size of the container with overflow: hidden
+// https://gist.github.com/brianmcallister/2932463
+//
+// $ratio - Ratio the element needs to maintain.
+//
+// Example: A 16:9 ratio would look like this: .element { @include maintain-ratio(16 9); }
+//
+@function ratio-to-percentage($ratio: 1 1) {
+	@if length($ratio) < 2 or length($ratio) > 2 {
+		@warn "$ratio must be a list with two values.";
+	}
+	@return percentage(nth($ratio, 2) / nth($ratio, 1));
+}
+
+@mixin maintain-ratio($ratio: 1 1) {
+	width: 100%;
+	height: 0;
+	padding-bottom: ratio-to-percentage($ratio);
+}
+
+// Apply as a typical container mixin
+@mixin proportional-container( $ratio: 1 1 ) {
+	position: relative; 
+	overflow: hidden; 
+	z-index: 1; 
+	@include maintain-ratio( $ratio ); 
+}
+
+@mixin proportional-element( $min: true ) {
+	position: absolute; 
+		top: 0; left:0; 
+	z-index: 2; 
+	@if ($min) {
+		min-width: 100% !important; 
+		min-height: 100% !important; 
+	} @else {
+		width: 100% !important; 
+		height: 100% !important; 
+	}
+}

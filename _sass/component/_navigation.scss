@@ -1,0 +1,130 @@
+/*<nav class="mainnav">
+	<ul class="mainnav--list">
+		<li><a href="#" class="mainnav--link mainnav--link__disabled">Portfolio</a></li>
+		<li><a href="#" class="mainnav--link">Classes</a></li>
+		<li><a href="#" class="mainnav--link">Blog</a></li>
+		<li><a href="#" class="mainnav--link">About</a></li>
+		<li><a href="#" class="mainnav--link">Contact</a></li>
+		<li>
+			<span class="mainnav--sub--trigger">More <span class="fa fa-caret-down" aria-hidden="true"></span></span>
+			<ul class="mainnav--sub">
+				<li><a href="#" class="mainnav--link mainnav--link__disabled">Portfolio</a></li>
+				<li><a href="#" class="mainnav--link">Classes</a></li>
+				<li><a href="#" class="mainnav--link">Blog</a></li>
+				<li><a href="#" class="mainnav--link">About</a></li>
+				<li><a href="#" class="mainnav--link">Contact</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>*/
+.mainnav {
+	padding: .5em 0 .75em;
+
+	&--list {
+		text-align: center;
+
+		li {
+			display: inline-block;
+			overflow: visible;
+			position: relative;
+			z-index: 1;
+		}
+	}
+	
+	&--link {
+		color: palette(brand, light);
+		line-height: 1.25;
+		padding: .25em .5em;
+		text-transform: lowercase;
+
+		@include touch-hover() { color: palette(brand, orange); }
+
+		&__disabled { @include touch-hover(true) { color: palette(mono, white); } }
+	}
+	
+	&--sub {
+		@include transition-property( opacity transform );
+		@include transition-duration( 500ms );
+		@include transition-timing-function( ease );
+		@include transition-delay( 250ms );
+		@include transform( translate(-50%, .75em) );
+		@include transform-origin( top );
+		border-top: 1px solid palette(brand, dark);
+		border-bottom: 1px solid palette(brand, darker);
+		box-shadow: 0 .125em .25em rgba(#000, .25);
+		list-style: none;
+		margin-left: 0;
+		opacity: 0;
+		position: absolute;
+			top: 100%; left: 50%;
+		visibility: hidden;
+		z-index: 2;
+
+		li { min-width: 100%; }
+
+		&--trigger {
+			color: palette(brand, orange);
+			cursor: pointer;
+			display: block;
+			text-transform: lowercase;
+		}
+	}
+
+	&--list li:hover &--sub,
+	&--list li:focus &--sub {
+		@include transform( translate(-50%, 0) );
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&--sub &--link {
+		background-color: percent-color($bg-color, 88%);
+		padding: .375em 1em;
+	}
+
+	&--sub li:first-child &--link { padding-top: .625em; }
+
+	&--sub li:last-child &--link { padding-bottom: .75em; }
+
+
+	// Overrides
+	&__bottom &--list li { display: block; }
+
+
+	// At breaks, "move" one nav element from visible nav to 'more" nav
+	@include media( max-width 360px ) {
+
+		&__top &--list > li:nth-child(3),
+		&__top &--list > li:nth-child(4),
+		&__top &--list > li:nth-child(5),
+		&__top &--sub > li:nth-child(1),
+		&__top &--sub > li:nth-child(2) { @include hide(); }
+	}
+
+	@include media( min-width 361px max-width 440px ) {
+
+		&__top &--list > li:nth-child(4),
+		&__top &--list > li:nth-child(5),
+		&__top &--sub > li:nth-child(1),
+		&__top &--sub > li:nth-child(2),
+		&__top &--sub > li:nth-child(3) { @include hide(); }
+	}
+
+	@include media( min-width 441px max-width 479px ) {
+
+		&__top &--list > li:nth-child(5),
+		&__top &--sub > li:nth-child(1),
+		&__top &--sub > li:nth-child(2),
+		&__top &--sub > li:nth-child(3),
+		&__top &--sub > li:nth-child(4) { @include hide(); }
+	}
+
+	@include media( min-width 480px ) {
+
+		&__top &--list > li:last-child { @include hide(); }
+
+		&__bottom { padding: 1em 0 1.5em; }
+
+		&__bottom &--list li { display: inline-block; }
+	}
+}

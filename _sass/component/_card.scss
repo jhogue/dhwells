@@ -1,0 +1,148 @@
+/*<div class="card">
+	<a href="#" class="card--link">
+		<span class="card--overlay">
+			<h2 class="card--title">Card Title</h2>
+		</span>
+		<span class="card--img-wrapper">
+			<img class="card--img" src="{{ site.baseurl }}/files/466267222.jpg" alt="">
+		</span>
+	</a>
+</div>*/
+$grid-margin: .5em;
+
+.card {
+	margin-bottom: ($vert-line-height/3) * 2;
+	padding-left: $grid-margin;
+	padding-right: $grid-margin;
+
+	&--grid {
+		@include clearfix;
+		margin-left: - $grid-margin;
+		margin-right: - $grid-margin;
+	}
+
+	&--link,
+	&--overlay { display: block; }
+
+	&--link {
+		@include proportional-container(4 3);
+
+		.card--overlay {
+			@include transform( scale(1.25, 1.25) );
+			@include transition( all 250ms ease );
+			@include transform-origin( center );
+			opacity: 0;
+		}
+
+		@include touch-hover() {
+
+			.card--overlay {
+				@include transform( scale(1, 1) );
+				opacity: 1;
+			}
+		}
+	}
+
+	&--overlay {
+		@include proportional-element();
+		background-color: rgba( palette(brand), .88);
+		color: palette(mono, white);
+		z-index: 3;
+	}
+
+	&--title {
+		@include transform( translate(0, -50%) );
+		color: palette(mono, white);
+		font-family: $font-custom;
+		font-size: rem(36);
+		font-size: 9vw;
+		letter-spacing: .0625em;
+		line-height: 1.125;
+		margin: 0 !important; // because .content--main h2 is overriding it
+		padding: 0 1em;
+		position: absolute;
+			top: 50%; left: 0;
+		text-align: center;
+		width: 100%;
+	}
+
+	&--img {
+		@include proportional-element();
+		@include transform( translate(-50%, 0) );
+		height: 100%;
+		max-width: intrinsic;
+			left: 50%;
+
+		&--wrapper { display: block; }
+	}
+
+
+	// Modifiers
+	&__duo {}
+	
+	&__trio & {
+		float: left;
+		width: 50%;
+	}
+
+	&__trio &--title {
+		font-size: rem(24);
+		font-size: 6vw;
+	}
+
+	@include media( max-width bp(small) ) {
+
+		.home &__trio &:nth-child(5) {
+			width: 100%;
+
+			.card--title {
+				font-size: rem(36);
+				font-size: 9vw;
+			}
+		}
+	}
+	
+	&__video &--link {
+
+		&:before {
+			display: inline-block;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+
+			background-color: palette(brand, orange);
+			color: palette(mono, white);
+			content: "\f008";
+			font-size: rem(24);
+			padding: .25em .5em;
+			position: absolute;
+				top: 0; left: 0;
+			z-index: 10;
+		}
+	}
+
+
+	// Media
+	@include media($small-up) {
+
+		&__duo .card {
+			float: left;
+			width: 50%;
+		}
+
+		&__duo .card--title { font-size: 6vw; }
+
+		&__trio .card { width: 33.33%; }
+
+		&__trio .card--title { font-size: 4vw; }
+	}
+
+	@include media($large-up) {
+
+		&__duo .card--title { font-size: em(62); }
+
+		&__trio .card--title { font-size: em(42); }
+	}
+}

@@ -1,0 +1,121 @@
+/*<header class="mainhead">
+	<div class="container">
+		<div class="mainhead--inner">
+			<div class="social">
+				<ul class="social--list">
+					<li><a href="//twitter.com/thewellspoint" class="social--link" alt="Follow me on Twitter"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+				</ul>
+			</div>
+			<nav class="mainnav mainnav__top">
+				<ul class="mainnav--list">
+					<li><a href="#" class="mainnav--link mainnav--link__disabled">Portfolio</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="brand"> [...] </div>
+	</div>
+</header>*/
+.mainhead {
+	border-bottom: 1px solid palette(brand, dark);
+	color: palette(mono,75);
+
+
+	// Header layout rules
+	@include media($small-up) {
+
+		&--inner { float: right; }
+
+		.social--list,
+		.mainnav--list { text-align: right; }
+
+		[data-tooltip] {
+
+			&:hover,
+			&:focus {
+
+				&:after { @include transform( translate(0, 0) ); }
+			}
+
+			&:after {
+				@include transform( translate(0, 12px) );
+				left: auto; right: 0;
+			}
+		}
+
+		.brand {
+			float: left;
+			padding: 1em 0 0;
+
+			&--tagline {
+				font-size: rem(16);
+				padding-top: .375em;
+			}
+		}
+	}
+}
+
+.social {
+	padding: .75em 0 1em;
+
+	&--list {
+		list-style: none;
+		margin-left: 0;
+		margin-bottom: 0;
+		text-align: center;
+
+		li { display: inline-block; }
+	}
+
+	&--link {
+		color: palette(brand);
+		display: block;
+		font-size: 1.5em;
+		padding: 0 .25em;
+
+		@include touch-hover() { color: palette(brand, orange); }
+	}
+}
+
+
+/*<div class="brand">
+	<a href="." class="brand--link">
+		<span class="brand--logo">David H. Wells</span>
+		<span class="brand--tagline">Narrative Visuals</span>
+	</a>
+</div>*/
+.brand {
+	padding: .25em 0 1em;
+	text-align: center;
+
+	&--link {
+		display: block;
+
+		.brand--logo { color: palette(mono, white); }
+
+		.brand--tagline { color: palette(brand, light); }
+
+		@include touch-hover() {
+
+			.brand--logo { color: palette(brand, light); }
+
+			.brand--tagline { color: palette(mono, white); }
+		}
+	}
+	
+	&--logo,
+	&--tagline {
+		@include transition( color 250ms ease );
+		display: block;
+		line-height: 1.25;
+	}
+
+	&--logo {
+		font-family: $font-custom;
+		font-size: rem(44);
+	}
+
+	&--tagline {
+		font-size: rem(14);
+		text-transform: lowercase;
+	}
+}

@@ -1,0 +1,36 @@
+/*<footer class="mainfoot">
+		<div class="container">
+			<div class="social social__bottom">
+				<ul class="social--list">
+					<li><a href="//twitter.com/thewellspoint" class="social--link tooltip tooltip--bottom" data-tooltip="Follow me on Twitter" target="_blank"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+				</ul>
+			</div>
+			
+			<nav class="mainnav mainnav__bottom">
+				<ul class="mainnav--list">
+					<li><a href="#" class="mainnav--link mainnav--link__disabled">Portfolio</a></li>
+					<li><a href="#" class="mainnav--link">Classes</a></li>
+					<li><a href="#" class="mainnav--link">Blog</a></li>
+					<li><a href="#" class="mainnav--link">About</a></li>
+					<li><a href="#" class="mainnav--link">Contact</a></li>
+				</ul>
+			</nav>
+			
+			<p class="mainfoot--copyright">
+				<span>All photos copyright &copy;{{ 'now' | date: '%Y' }} David H. Wells</span> 
+				<span>No images may be reproduced without </span> 
+				<span>written consent of the artist</span>
+			</p>
+		</div>
+	</footer>*/
+.mainfoot {
+	
+	&--copyright {
+		@include one-element-size(micro);
+		color: percent-color(palette(mono), 96%);
+		padding: .5em 0 1em;
+		text-align: center;
+
+		span { display: block; }
+	}
+}

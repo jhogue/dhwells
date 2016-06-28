@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="prefetch" href="https://fonts.google.com">
+	<link rel="prefetch" href="https://maxcdn.bootstrapcdn.com">
+	<link rel="prefetch" href="https://code.jquery.com">
+	<title>Vertical Rhythm</title>
+	<meta name="description" content="A wireframe system for quick HTML/SASS prototypes">
+	<meta name="viewport" content="width=device-width">
+	<link rel="canonical" href="//davidwells.highchairdesign.com/theme/sample-rhythm/">
+
+	<!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="/theme/assets/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<script src="/theme/assets/js/modernizr.js"></script>
+</head>
+
+
+	<body class="layout--default ">
+
+		<div id="top"></div>
+
+	<header class="mainhead">
+		<div class="container">
+			
+			<div class="mainhead--inner">
+				<div class="social social__top">
+					<ul class="social--list">
+						<li><a href="//twitter.com/thewellspoint" class="social--link tooltip--bottom" data-tooltip="Follow me on Twitter" target="_blank"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+						<li><a href="//www.facebook.com/thewellspoint" class="social--link tooltip--bottom" data-tooltip="Like me on Facebook" target="_blank"><span class="fa fa-facebook-square" aria-hidden="true"></span></a></li>
+						<li><a href="//thewellspoint.tumblr.com" class="social--link tooltip--bottom" data-tooltip="Follow me on Tumblr" target="_blank"><span class="fa fa-tumblr-square" aria-hidden="true"></span></a></li>
+						<li><a href="//instagram.com/thewellspoint" class="social--link tooltip--bottom" data-tooltip="Follow me on Instagram" target="_blank"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
+						<li><a href="//vimeo.com/thewellspoint" class="social--link tooltip--bottom" data-tooltip="Watch me on Vimeo" target="_blank"><span class="fa fa-vimeo-square" aria-hidden="true"></span></a></li>
+						<li><a href="//itunes.apple.com/us/podcast/the-wells-point/id303950605" class="social--link tooltip--bottom" data-tooltip="Listen to Podcasts" target="_blank"><span class="fa fa-headphones" aria-hidden="true"></span></a></li>
+						<li><a href="#" class="social--link tooltip--bottom" data-tooltip="Subscribe via RSS" target="_blank"><span class="fa fa-rss-square" aria-hidden="true"></span></a></li>
+					</ul>
+				</div>
+				
+				<nav class="mainnav mainnav__top">
+					<ul class="mainnav--list">
+						<li><a href="#" class="mainnav--link mainnav--link__disabled">Portfolio</a></li>
+						<li><a href="#" class="mainnav--link">Classes</a></li>
+						<li><a href="#" class="mainnav--link">Blog</a></li>
+						<li><a href="#" class="mainnav--link">About</a></li>
+						<li><a href="#" class="mainnav--link">Contact</a></li>
+						<li>
+							<span class="mainnav--sub--trigger">More <span class="fa fa-caret-down" aria-hidden="true"></span></span>
+							<ul class="mainnav--sub">
+								<li><a href="#" class="mainnav--link mainnav--link__disabled">Portfolio</a></li>
+								<li><a href="#" class="mainnav--link">Classes</a></li>
+								<li><a href="#" class="mainnav--link">Blog</a></li>
+								<li><a href="#" class="mainnav--link">About</a></li>
+								<li><a href="#" class="mainnav--link">Contact</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			
+			<div class="brand">
+				<a href="." class="brand--link">
+					<span class="brand--logo">David H. Wells</span>
+					<span class="brand--tagline">Narrative Visuals</span>
+				</a>
+			</div>
+			
+		</div>
+	</header>
+
+
+	<section id="main" class="content">
+		<div class="container">
+				<header class="content--header">
+		<h1 class="content--title">Vertical Rhythm</h1>
+	</header>
+	<article class="content--main">
+
+		<div class="typography vertical-grid">
+              
+	<h1 id="menu">Establish a Vertical Rhythm</h1>
+	<p>Use our <code>.vertical-grid</code> class to add a background that can help establish a vertical rhythm. The line-height of the grid should be adjusted for each project, as well as the vertical offset to align to the first element. </p>
+	<pre class="examplecode"><code>background-image: url(http://basehold.it/i/31/cc0000);
+background-position: 0px 14px;;</code></pre>
+	<p>Adjust the '31' in the first line to change the space between lines. Look at your rendered line-height on a <code>&lt;p&gt;</code> to see what the value needs to be. The adjust the position offset if needed.</p>
+	
+	
+	<h1 id="headings">Heading 1 <a href="#">with a Link</a></h1>
+	<p>The primary header is an <code>&lt;h1&gt;</code> element. Any header elements may include links, as depicted in the example. More than one of any type may be used per page. All of the headings follow a similar markup pattern:</p>
+	
+	<!-- <pre class="examplecode"><code>&lt;h1&gt;This is a heading of primary importance&lt;/h1&gt;</code></pre> -->
+	
+	<h2>Second-Level Header <a href="#">with a Link</a></h2>
+	<p>The secondary header is an <code>&lt;h2&gt;</code> element, which may be used for any form of important page-level header. More than one may be used per page. Consider using an <code>h2</code> as a sub-header to the page title or an existing <code>h1</code> element.</p>
+	
+	<h3>Third-Level Header <a href="#">with a Link</a></h3>
+	<p>The header above is an <code>&lt;h3&gt;</code> element, which may be used for any form of page-level header which falls below the <code>h2</code> header in a document hierarchy.</p>
+	
+	<h4>Fourth-Level Header <a href="#">with a Link</a></h4>
+	<p>The header above is an <code>&lt;h4&gt;</code> element, which may be used for any form of page-level header which falls below the <code>h3</code> header in a document hierarchy.</p>
+	
+	<h5>Fifth-Level Header <a href="#">with a Link</a></h5>
+	<p>The header above is an <code>&lt;h5&gt;</code> element, which may be used for any form of page-level header which falls below the <code>h4</code> header in a document hierarchy.</p>
+	
+	<h6>Sixth-Level Header <a href="#">with a Link</a></h6>
+	<p>The header above is an <code>&lt;h6&gt;</code> element, which may be used for any form of page-level header which falls below the <code>h5</code> header in a document hierarchy.</p>
+	<!-- end Headings -->
+	
+	<h2>Vertical Rhythm Test</h2>
+	<h3>An h2 proceeded by an h3</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<ul>
+		<li>A short bullet point</li>
+		<li>Another short bullet point</li>
+	</ul>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+	<h3>Another likely Pair</h3>
+	<h4>An h3 proceeded by an h4</h4>
+	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<ul>
+		<li>A short bullet point</li>
+		<li>Another short bullet point
+			<ol>
+				<li>A nested numeric list</li>
+				<li>Oh yeah, it gets complicated now
+					<ol>
+						<li>Further nesting, probably an edge case</li>
+						<li>I mean, the CSS plans for four levels of nesting
+							<ol>
+								<li>For a total of five levels of depth!
+									<ol>
+										<li>But that would be crazy
+											<ol>
+												<li>Maybe someone in academics needs to go this far down</li>
+											</ol>
+										</li>
+									</ol>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+				<li>Phew, that was a lot</li>
+			</ol>
+		</li>
+	</ul>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+	<address>An address element. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </address>
+	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	
+	
+	<h2>Long List Lines Test</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<ul>
+		<li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+		<li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+		<li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+	</ul>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<blockquote cite="http://hansard.millbanksystems.com/commons/1947/nov/11/parliament-bill#column_206">
+	    <p>Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise. Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.</p>
+	</blockquote>
+	<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</div>
+
+	</article>
+		</div>
+	</section>
+
+		<footer class="mainfoot">
+		<div class="container">
+			<div class="social social__bottom">
+				<ul class="social--list">
+					<li><a href="//twitter.com/thewellspoint" class="social--link tooltip tooltip--bottom" data-tooltip="Follow me on Twitter" target="_blank"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+					<li><a href="//www.facebook.com/thewellspoint" class="social--link tooltip tooltip--bottom" data-tooltip="Like me on Facebook" target="_blank"><span class="fa fa-facebook-square" aria-hidden="true"></span></a></li>
+					<li><a href="//thewellspoint.tumblr.com" class="social--link tooltip tooltip--bottom" data-tooltip="Follow me on Tumblr" target="_blank"><span class="fa fa-tumblr-square" aria-hidden="true"></span></a></li>
+					<li><a href="//instagram.com/thewellspoint" class="social--link tooltip tooltip--bottom" data-tooltip="Follow me on Instagram" target="_blank"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
+					<li><a href="//vimeo.com/thewellspoint" class="social--link tooltip tooltip--bottom" data-tooltip="Watch me on Vimeo" target="_blank"><span class="fa fa-vimeo-square" aria-hidden="true"></span></a></li>
+					<li><a href="//itunes.apple.com/us/podcast/the-wells-point/id303950605" class="social--link tooltip tooltip--bottom" data-tooltip="Listen to Podcasts" target="_blank"><span class="fa fa-headphones" aria-hidden="true"></span></a></li>
+					<li><a href="#" class="social--link tooltip tooltip--bottom" data-tooltip="Subscribe via RSS" target="_blank"><span class="fa fa-rss-square" aria-hidden="true"></span></a></li>
+				</ul>
+			</div>
+			
+			<nav class="mainnav mainnav__bottom">
+				<ul class="mainnav--list">
+					<li><a href="#" class="mainnav--link mainnav--link__disabled">Portfolio</a></li>
+					<li><a href="#" class="mainnav--link">Classes</a></li>
+					<li><a href="#" class="mainnav--link">Blog</a></li>
+					<li><a href="#" class="mainnav--link">About</a></li>
+					<li><a href="#" class="mainnav--link">Contact</a></li>
+				</ul>
+			</nav>
+			
+			<p class="mainfoot--copyright">
+				<span>All photos copyright &copy;2016 David H. Wells</span> 
+				<span>No images may be reproduced without </span> 
+				<span>written consent of the artist</span>
+			</p>
+			
+			
+			<p class="mainfoot--list">
+				<span class="mainfoot--link">All pages</span> 
+				
+				<a href="/themereadme/" class="mainfoot--link">Read Me</a> 
+				
+				<a href="/themeicons/" class="mainfoot--link">Icons</a> 
+				
+				<a href="/theme" class="mainfoot--link">Portfolio</a> 
+				
+				<a href="/themesample-html/" class="mainfoot--link">HTML Elements</a> 
+				
+				<a href="/themesample-rhythm/" class="mainfoot--link">Vertical Rhythm</a> 
+				
+			</p>
+		</div>
+	</footer>
+	
+	<div id="size"></div>
+ 
+	<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+    <script src="/theme/assets/js/plugins.js"></script>
+    <script src="/theme/assets/js/main.js"></script>
+
+	</body>
+</html>

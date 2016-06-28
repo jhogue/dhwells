@@ -1,0 +1,50 @@
+// @file layout.scss
+/*
+<header class="mainhead">
+	<div class="container">
+		[ ... ]
+	</div>
+</header>
+<nav class="mainnav">
+	<div class="container">
+		[ ... ]
+	</div>
+</nav>
+
+<section id="main" class="content">
+	<div class="container">
+		<header class="content--header">
+			<h1 class="">Sample</h1>
+		</header>
+		<article class="content--main">
+			[ ... ]
+		</article>
+	</div>
+</section>
+
+<footer class="mainfoot">
+	<p class="mainfoot--copyright">©2016 Oomph, Inc.</p>
+</footer>
+*/
+
+.container {
+	padding: 0 1em;
+	min-width: $min-width;
+	@include outer-container();
+}
+
+
+// Highlight the pieces
+/*.mainhead,
+.mainnav,
+.content,
+.mainfoot,
+.container {
+	border-width: 5px;
+	border-style: solid;
+	border-color: rgba(0,0,255,.33);
+}
+
+.mainnav { border-color: rgba(255,0,0,.33); }
+
+.container { border-color: rgba(0,255,0,.33); }*/

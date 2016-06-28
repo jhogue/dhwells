@@ -1,0 +1,45 @@
+	<footer class="mainfoot">
+		<div class="container">
+			<div class="social social__bottom">
+				<ul class="social--list">
+					<li><a href="//twitter.com/thewellspoint" class="social--link tooltip tooltip--bottom" data-tooltip="Follow me on Twitter" target="_blank"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+					<li><a href="//www.facebook.com/thewellspoint" class="social--link tooltip tooltip--bottom" data-tooltip="Like me on Facebook" target="_blank"><span class="fa fa-facebook-square" aria-hidden="true"></span></a></li>
+					<li><a href="//thewellspoint.tumblr.com" class="social--link tooltip tooltip--bottom" data-tooltip="Follow me on Tumblr" target="_blank"><span class="fa fa-tumblr-square" aria-hidden="true"></span></a></li>
+					<li><a href="//instagram.com/thewellspoint" class="social--link tooltip tooltip--bottom" data-tooltip="Follow me on Instagram" target="_blank"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
+					<li><a href="//vimeo.com/thewellspoint" class="social--link tooltip tooltip--bottom" data-tooltip="Watch me on Vimeo" target="_blank"><span class="fa fa-vimeo-square" aria-hidden="true"></span></a></li>
+					<li><a href="//itunes.apple.com/us/podcast/the-wells-point/id303950605" class="social--link tooltip tooltip--bottom" data-tooltip="Listen to Podcasts" target="_blank"><span class="fa fa-headphones" aria-hidden="true"></span></a></li>
+					<li><a href="#" class="social--link tooltip tooltip--bottom" data-tooltip="Subscribe via RSS" target="_blank"><span class="fa fa-rss-square" aria-hidden="true"></span></a></li>
+				</ul>
+			</div>
+			
+			<nav class="mainnav mainnav__bottom">
+				<ul class="mainnav--list">
+					<li><a href="#" class="mainnav--link mainnav--link__disabled">Portfolio</a></li>
+					<li><a href="#" class="mainnav--link">Classes</a></li>
+					<li><a href="#" class="mainnav--link">Blog</a></li>
+					<li><a href="#" class="mainnav--link">About</a></li>
+					<li><a href="#" class="mainnav--link">Contact</a></li>
+				</ul>
+			</nav>
+			
+			<p class="mainfoot--copyright">
+				<span>All photos copyright &copy;{{ 'now' | date: '%Y' }} David H. Wells</span> 
+				<span>No images may be reproduced without </span> 
+				<span>written consent of the artist</span>
+			</p>
+			
+			
+			<p class="mainfoot--list">
+				<span class="mainfoot--link">All pages</span> 
+				{% for page in site.pages | sort:'title' %}
+				<a href="{{ site.baseurl}}{{ page.permalink }}" class="mainfoot--link">{% if page.nav-title %}{{ page.nav-title }}{% else %}{{ page.title }}{% endif %}</a> 
+				{% endfor %}
+			</p>
+		</div>
+	</footer>
+	
+	<div id="size"></div>
+ 
+	<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+    <script src="{{ "/assets/js/plugins.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>

@@ -1,0 +1,49 @@
+// @file colors.scss
+
+// Getter function for color palettes using SASS maps
+// Link: http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+// Usage: color: palette(brand,tan);
+@function palette( $palette, $tone:base ) {
+
+	@if not index(map-keys($palettes), $palette) {
+		@error "Error: A palette named `#{$palette}` does not exist.";
+	}
+	
+	@if not index(map-keys(map-get($palettes, $palette)), $tone) {
+		@error "There is no `#{$tone}` defined in your `#{$palette}` color map however, its being called in your theme.";
+	}
+	@return map-deep-get( $palettes, $palette, $tone );
+}
+
+
+// Color palettes using SASS maps
+$palettes: (
+
+	// Brand should contain this project's specific color scheme
+	brand: (
+		base: #60a0a5, // Teal
+		light: #99b8a3,
+		dark: #393d40,
+		darker: #42464b,
+		orange: #bf9852,
+		green: #7da799
+	),
+	
+	// Default color scheme, edit values in relation to the numeric representation
+	// In other words, keep high values dark and low values light
+	mono: (
+		black: #131313,
+		90: #303030,
+		75: #4b5055,
+		66: #666,
+		base: #868a8d,
+		33: #bbb,
+		25: #dfdfdf,
+		10: #f2f2f2,
+		white: #fff
+	)
+);
+
+// Helpful variables as defaults
+$default-border-color: palette(mono,25);
+$bg-color: palette(mono, 75);
