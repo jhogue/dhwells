@@ -89,18 +89,6 @@ $grid-margin: .5em;
 		font-size: rem(24);
 		font-size: 6vw;
 	}
-
-	@include media( max-width bp(small) ) {
-
-		.home &__trio &:nth-child(5) {
-			width: 100%;
-
-			.card--title {
-				font-size: rem(36);
-				font-size: 9vw;
-			}
-		}
-	}
 	
 	&__video &--link {
 
@@ -137,6 +125,23 @@ $grid-margin: .5em;
 		&__trio .card { width: 33.33%; }
 
 		&__trio .card--title { font-size: 4vw; }
+	}
+
+	@include media( max-width bp(small) ) {
+
+		.home &__trio &:nth-child(5) {
+			width: 100%;
+
+			.card--title {
+				font-size: rem(36);
+				font-size: 9vw;
+			}
+		}
+	}
+
+	@include media($medium-up) {
+
+		&--link { padding-bottom: ratio-to-percentage(16 9); }
 	}
 
 	@include media($large-up) {
